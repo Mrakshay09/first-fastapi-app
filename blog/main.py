@@ -1,13 +1,10 @@
-from blog.routers import email
-from fastapi import Depends, FastAPI, status, Response,HTTPException
+from fastapi import FastAPI
 
-from blog.hashing import Hash
-from . import models, schemas, hashing
-from .database import engine,get_db
-from sqlalchemy.orm import Session
-from typing import List
-from pwdlib import PasswordHash
-from .routers import blog, user, auth
+from blog.routers import email
+
+from . import models
+from .database import engine
+from .routers import auth, blog, user
 
 app = FastAPI()
 app.include_router(user.router)

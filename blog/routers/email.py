@@ -1,6 +1,6 @@
+from fastapi import APIRouter, BackgroundTasks
+
 from blog.config.email import send_email
-from fastapi import APIRouter, Depends, HTTPException,status,BackgroundTasks
-from email.message import EmailMessage
 
 router = APIRouter(
    tags=["email"],

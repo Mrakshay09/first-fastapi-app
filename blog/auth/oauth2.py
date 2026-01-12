@@ -1,10 +1,10 @@
 
 
 from typing import Annotated
-from fastapi import HTTPException,status
+
+from fastapi import HTTPException, status
 from fastapi.params import Depends
 from fastapi.security import OAuth2PasswordBearer
-import jwt
 
 from blog.auth import jwt_util
 

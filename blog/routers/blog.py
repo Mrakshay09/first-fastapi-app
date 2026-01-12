@@ -1,15 +1,13 @@
-from fastapi import APIRouter, Depends
 from typing import List
+
+from fastapi import APIRouter, Depends, Response, status
+from sqlalchemy.orm import Session
 
 from blog.auth.oauth2 import get_current_user, require_roles
-from .. import schemas, database
-from sqlalchemy.orm import Session
-from fastapi import Depends, status, Response
-from sqlalchemy.orm import Session
-from typing import List
+
+from .. import database, schemas
 from ..database import get_db
 from ..repository import blog as blog_repository
-
 
 router = APIRouter(
    tags=["Blogs"],

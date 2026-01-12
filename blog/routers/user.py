@@ -1,14 +1,9 @@
-from datetime import timedelta
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, status
+from sqlalchemy.orm import Session
 
-from blog.auth.jwt_util import ACCESS_TOKEN_EXPIRE_MINUTES
 from .. import schemas
-from sqlalchemy.orm import Session
-from fastapi import Depends, status
-from sqlalchemy.orm import Session
 from ..database import get_db
 from ..repository import user as user_repository
-
 
 router = APIRouter(
     prefix="/user",

@@ -1,11 +1,6 @@
-from fastapi import FastAPI, BackgroundTasks
-from email.message import EmailMessage
 import smtplib
-import ssl
-
 from email.message import EmailMessage
 from email.utils import make_msgid
-import smtplib
 
 EMAIL_SENDER = "akshaysethiya0904@gmail.com"
 EMAIL_PASSWORD = "xstqgjanqoonhdzb"
