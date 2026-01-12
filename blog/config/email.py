@@ -1,11 +1,12 @@
 import smtplib
 from email.message import EmailMessage
 from email.utils import make_msgid
+from decouple import config
 
-EMAIL_SENDER = "akshaysethiya0904@gmail.com"
-EMAIL_PASSWORD = "xstqgjanqoonhdzb"
-SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587
+EMAIL_SENDER = config("EMAIL_ID")
+EMAIL_PASSWORD = config("EMAIL_PASSWORD")
+SMTP_SERVER = config("SMTP_SERVER")
+SMTP_PORT = config("SMTP_PORT")
 
 def send_email(to_email: str, subject: str, body: str):
     msg = EmailMessage()
